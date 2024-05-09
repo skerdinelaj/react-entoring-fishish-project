@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "../UI/Button";
 type SessionItemProps = {
     id: string;
     title: string;
@@ -19,7 +19,7 @@ export default function SessionItem({ ...session }: SessionItemProps) {
                     <p>{session.summary}</p>
                 </div>
                 <p className='actions'>
-                    <Link to={session.id} className='button'>Learn more</Link>
+                    <Button to={session.id} className='button'>Learn more</Button>
                 </p>
             </div>
         </article>

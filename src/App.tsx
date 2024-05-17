@@ -7,15 +7,15 @@ import Root from './pages/Root.tsx';
 
 const Router = createBrowserRouter([
   {
-    path: '/',
+    path: '/react-mentoring-finish-project/',
     element: <Root />,
     children: [
       {
         index: true,
         element: <HomePage />,
       },
-      { path: 'sessions', element: <SessionsPage /> },
-      { path: 'sessions/:id', element: <SessionPage /> },
+      { path: '/react-mentoring-finish-project/sessions', element: <SessionsPage /> },
+      { path: '/react-mentoring-finish-project/sessions/:id', element: <SessionPage /> },
     ],
   },
 ]);

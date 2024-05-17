@@ -16,7 +16,7 @@ export default function Header() {
     <main id='main-header'>
       <Modal ref={handleModal}>
         <h1>Upcoming Sessions</h1>
-        {selector.length === 0 && <p>no card</p>}
+        {selector.length === 0 && <p>No upcoming sessions</p>}
         <ul>
           {selector?.map(item=>(
           <li key={item.id}>
@@ -39,10 +39,10 @@ export default function Header() {
       <nav>
         <ul>
           <li>
-            <NavLink to="/" >Our Mission</NavLink>
+            <NavLink to="/react-mentoring-finish-project/" className={({ isActive }) => isActive ? 'active' : ''} >Our Mission</NavLink>
           </li>
           <li>
-            <NavLink to="sessions">Brouse Session</NavLink>
+            <NavLink to="/react-mentoring-finish-project/sessions" className={({ isActive }) => isActive ? 'active' : ''}>Brouse Session</NavLink>
           </li>
           <li>
             <Button className='button' onClick={() => handleModal.current?.showModal()}>Upcoming Sessions</Button>

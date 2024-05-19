@@ -70,7 +70,9 @@ export default function SessionPage() {
             alt={loadedSession.title}
           />
           <div>
+
             <h2>{loadedSession.title}</h2>
+          <div className="info">
             <time dateTime={new Date(loadedSession.date).toISOString()}>
               {new Date(loadedSession.date).toLocaleDateString('en-US', {
                 day: 'numeric',
@@ -78,9 +80,10 @@ export default function SessionPage() {
                 year: 'numeric',
               })}
             </time>
-            <p>
+            <p className="actions">
               <Button onClick={() => handleModal.current?.showModal()}>Book Session</Button>
             </p>
+          </div>
           </div>
         </header>
         <p id="content">{loadedSession.description}</p>

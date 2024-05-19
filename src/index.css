@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: linear-gradient(90deg, #49464f 0, #373240 100%);
 }
 
@@ -24,6 +24,7 @@ ul {
   cursor: pointer;
   text-decoration: none;
   font: inherit;
+  text-wrap: nowrap;
 }
 
 .button:hover,
@@ -113,6 +114,85 @@ ul {
 #main-header a:active,
 #main-header a.active {
   border-color: #c6a8f5;
+}
+
+#hamburger-nav {
+  display: none;
+}
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.hamburger-icon span {
+  width: 100%;
+  height: 2px;
+  background-color: #b68ef7;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: fit-content;
+  background: linear-gradient(90deg, #49464f 0, #373240 100%);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links a {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-links li {
+  list-style: none;
+}
+
+.menu-links.open {
+  max-height: 300px;
+}
+
+.hamburger-icon.open span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
+}
+
+.hamburger-icon span:first-child {
+  opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+  transform: none;
 }
 
 #home-page {
@@ -306,5 +386,155 @@ ul {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #sessions-page {
+    width: 90%;
+    margin: auto;
+  }
+
+  #main-header {
+    width: 90%;
+  }
+
+  #home-page {
+    width: 90%;
+  }
+
+  #home-page section {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  #home-page img {
+    border-radius: 80px;
+    width: 90%;
+    height: 90%;
+  }
+
+  #session-page header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #session-page img {
+    width: 90%;
+    height: 25rem;
+  }
+
+  #sessions-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+  }
+
+  #main-header a {
+    padding: 0.5rem 1.5rem;
+    font: inherit;
+}
+}
+
+@media screen and (max-width: 500px) {
+  #sessions-page {
+    width: 90%;
+    margin: auto;
+  }
+
+  #main-header {
+    width: 90%;
+  }
+
+  #home-page {
+    width: 90%;
+  }
+
+  #home-page h2 {
+    font-size: 2rem;
+  }
+
+  #home-page h3 {
+    font-size: 1.2rem;
+  }
+
+  #home-page p {
+    font-size: 0.85rem;
+  }
+
+  #main-header a {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  #home-page section {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  #home-page img {
+    border-radius: 80px;
+    width: 90%;
+    height: 90%;
+  }
+
+  #session-page header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #session-page img {
+    width: 90%;
+    height: 25rem;
+  }
+
+  #sessions-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #main-header h1 {
+    font-size: 1.2rem;
+  }
+
+  #sessions-page h2 {
+    font-size: 1.2rem;
+  }
+
+  #sessions-page header p {
+    font-size: 0.8rem;
+  }
+
+  .session-item .session-data p {
+    font-size: 0.8rem;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
   }
 }
